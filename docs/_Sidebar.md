@@ -1,5 +1,7 @@
 #Documentation
-* [[glib::window]]
+* [[glib::foo]]
+* [[glib::bar]]
+* [[glib::baz]]
 
 *** 
 

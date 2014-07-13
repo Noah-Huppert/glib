@@ -1,2 +1,7 @@
-- [ ] Add Glload  
 - [ ] Add GLFW
+ - [ ] Link to src
+ - [ ] Add GLFW code
+- [ ] Add Glload  
+ - [x] Build Glload
+ - [ ] Link Glload to src
+ - [ ] Add Glload code
