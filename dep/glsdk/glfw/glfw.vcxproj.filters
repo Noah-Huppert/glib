@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="lib">
+			<UniqueIdentifier>{A56B75FD-D1A0-3C4D-A497-2E8A2553FDE6}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="lib\win32">
+			<UniqueIdentifier>{E3DC5FBC-46AC-A245-AD1F-2A854F7F10D2}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="lib\enable.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\fullscreen.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\glext.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\image.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\init.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\input.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\joystick.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\stream.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\tga.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\thread.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\time.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\window.c">
+			<Filter>lib</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_dllmain.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_enable.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_fullscreen.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_glext.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_init.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_joystick.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_thread.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_time.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+		<ClCompile Include="lib\win32\win32_window.c">
+			<Filter>lib\win32</Filter>
+		</ClCompile>
+	</ItemGroup>
+</Project>
