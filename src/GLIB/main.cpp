@@ -1,10 +1,12 @@
 //ERROR: iNCLUDING glload HEADERS IN THE SAME FILE AS glfw HEADERS CAUSES exit AND CONSTANTS LIKE gl_true AND g_falure TO BE UNDEFINED
-#include "glload\gl_all.hpp"
+#include "glload\gl_4_3.hpp"
 #include "glload\gl_load.hpp"
 
+#undef APIENTRY
 #include "GLFW\glfw3.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 static void error_callback(int error, const char* desc){
 	fputs(desc, stderr);
@@ -17,7 +19,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
 int main(void){
 	GLFWwindow * window;
-	
+
 	glfwSetErrorCallback(error_callback);
 
 	if (!glfwInit()){

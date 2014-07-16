@@ -4,16 +4,24 @@
     <Filter Include="Modules">
       <UniqueIdentifier>{6553648b-aea9-42cf-a431-566c1b80e5bb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Modules\Core">
-      <UniqueIdentifier>{1d5c6a4f-a231-4144-961f-42922ad6c657}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Playground">
       <UniqueIdentifier>{70caf3f4-349e-4741-a896-6935f3712c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\window">
+      <UniqueIdentifier>{b64d9fcf-df57-4944-b746-5fbd88cb0397}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Playground</Filter>
     </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Modules\window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window.h">
+      <Filter>Modules\window</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

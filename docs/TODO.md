@@ -1,4 +1,6 @@
 - [ ] Add GLFW
+ - [ ] Download CMake
+ - [ ] Build GLFW
  - [ ] Link to src
  - [ ] Add GLFW code
 - [ ] Add Glload  

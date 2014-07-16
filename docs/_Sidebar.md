@@ -1,7 +1,7 @@
 #Documentation
-* [[glib::foo]]
-* [[glib::bar]]
-* [[glib::baz]]
+* [[glib::window]]
+* [[glib::inputHandler]]
+* [[glib::renderer]]
 
 *** 
 
