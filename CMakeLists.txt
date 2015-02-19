@@ -21,6 +21,16 @@ externalproject_add(glfw
 set(INCLUDE_DIRS ${INCLUDE_DIRS}
     ${GLFW_PATH}/include)
 
+set(SOURCE_FILES ${SOURCE_FILES}
+    ${GLFW_PATH}/include/GLFW/glfw3.h)
+
+link_directories(${GLFW_PATH}/lib)
+
 #Build
 include_directories(${INCLUDE_DIRS})
 add_library(glib STATIC ${SOURCE_FILES})
+
+add_custom_target(combined ALL
+   COMMAND ${CMAKE_CXX_ARCHIVE_CREATE} glibcomplete.a glib glfw)
+
+#target_link_libraries(glib glfw)
