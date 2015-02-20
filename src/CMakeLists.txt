@@ -1,11 +1,16 @@
-set(CURRENT_DIR ${PROJECT_SOURCE_DIR}/src)
+set(SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 
-set(SOURCE_FILES ${SOURCE_FILES}
-    ${CURRENT_DIR}/glib/glib.h
-    ${CURRENT_DIR}/glib/GlibWindow/GlibWindow.cpp
-    ${CURRENT_DIR}/glib/GlibWindow/GlibWindow.h
+#Include
+set(glib_SOURCE_FILES ${glib_SOURCE_FILES}
+    ${SRC_DIR}/include/glib.h
+    ${SRC_DIR}/include/GlibErrors.h
+    ${SRC_DIR}/include/GlibApplication.h
+    ${SRC_DIR}/include/GlibWindow.h
+
+    ${SRC_DIR}/source/GlibApplication.cpp
+    ${SRC_DIR}/source/GlibWindow.cpp
     PARENT_SCOPE)
 
-set(INCLUDE_DIRS ${INCLUDE_DIRS}
-    ${CURRENT_DIR}
+set(glib_INCLUDE_DIRS ${glib_INCLUDE_DIRS}
+    ${SRC_DIR}/include
     PARENT_SCOPE)

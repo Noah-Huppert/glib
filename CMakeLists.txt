@@ -1,50 +1,42 @@
 cmake_minimum_required(VERSION 2.8.4)
-project(glib)
-
-include(ExternalProject)
+project(glib CXX)
 
 #Global
-set(SOURCE_FILES)
-set(INCLUDE_DIRS)
+# -- Includes
+include(ExternalProject)
 
-set(EXTERNAL_LIB_PATH ${PROJECT_BINARY_DIR}/libs)
+# -- Vars
+set(EXTERNAL_LIB_DIR ${PROJECT_BINARY_DIR}/ExternalLibs)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+#GLIB
+# -- Vars
+set(glib_SOURCE_FILES)
+set(glib_INCLUDE_DIRS)
 
-#Glib
+# -- Source
 add_subdirectory(src)
 
 #GLFW
-set(GLFW_PATH ${EXTERNAL_LIB_PATH}/glfw)
+# -- Vars
+set(glfw_INSTALL_DIR ${EXTERNAL_LIB_DIR}/glfw)
+set(glfw_INCLUDE_DIRS ${glfw_INSTALL_DIR}/include)
 
-externalproject_add(glfw
+set(glfw_INCLUDE_DIRS ${glfw_INCLUDE_DIRS}
+    ${glfw_INSTALL_DIR}/include/GLFW)
+
+# -- Build
+externalProject_add(glfw
     GIT_REPOSITORY https://github.com/glfw/glfw.git
     GIT_TAG 3.1
-    CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${GLFW_PATH}")
+    CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${glfw_INSTALL_DIR}")
 
-set(INCLUDE_DIRS ${INCLUDE_DIRS}
-    ${GLFW_PATH}/include)
+#Compile
+# -- Link
+# -- -- GLIB
+include_directories(${glib_INCLUDE_DIRS})
 
-#Build
-set(GLIB_LIB_DIR ${PROJECT_BINARY_DIR}/libs/glib)
+# -- -- GLFW
+include_directories(${glfw_INCLUDE_DIRS})
 
-set(ARCHIVE_OUTPUT_DIRECTORY ${GLIB_LIB_DIR})
-
-include_directories(${INCLUDE_DIRS})
-add_library(glib STATIC ${SOURCE_FILES})
-
-set_target_properties(glib PROPERTIES
-         ARCHIVE_OUTPUT_DIRECTORY ${GLIB_LIB_DIR})
-
-#Install
-# -- GLFW
-install(DIRECTORY ${GLFW_PATH}
-        DESTINATION ./)
-
-# -- glib
-install(DIRECTORY ${GLIB_LIB_DIR}
-        DESTINATION ./)
-
-install(DIRECTORY src/
-        DESTINATION glib/include
-        FILES_MATCHING PATTERN "**/*.h")
+# -- Compile
+add_library(glib STATIC ${glib_SOURCE_FILES})
