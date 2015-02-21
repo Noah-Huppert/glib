@@ -6,7 +6,7 @@ project(glib CXX)
 include(ExternalProject)
 
 # -- Vars
-set(EXTERNAL_LIB_DIR ${PROJECT_BINARY_DIR}/ExternalLibs)
+set(EXTERNAL_LIB_DIR ${PROJECT_BINARY_DIR}/libs)
 
 #GLIB
 # -- Vars
@@ -30,13 +30,27 @@ externalProject_add(glfw
     GIT_TAG 3.1
     CMAKE_ARGS "-DCMAKE_INSTALL_PREFIX=${glfw_INSTALL_DIR}")
 
+#GLEW
+# -- Vars
+set(glew_INSTALL_DIR ${EXTERNAL_LIB_DIR}/glew)
+
+# -- Build
+#externalProject_add(glew
+#    GIT_REPOSITORY https://github.com/nigels-com/glew.git
+#    GIT_TAG glew-1.12.0
+#    SOURCE_DIR build/cmake
+#    INSTALL_DIR ${glew_INSTALL_DIR})
+
+
 #Compile
 # -- Link
 # -- -- GLIB
 include_directories(${glib_INCLUDE_DIRS})
+message(${glib_INCLUDE_DIRS})
 
 # -- -- GLFW
 include_directories(${glfw_INCLUDE_DIRS})
+message(${glfw_INCLUDE_DIRS})
 
 # -- Compile
 add_library(glib STATIC ${glib_SOURCE_FILES})

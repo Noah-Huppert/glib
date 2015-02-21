@@ -1,17 +1,18 @@
 #ifndef GLIB_WINDOW_H
 #define GLIB_WINDOW_H
 
+#include <functional>
 #include <memory>
-
 #include "GLFW\glfw3.h"
 
-class GlibWindow{
-private:
-	std::shared_ptr<GLFWwindow> mGLFWWindow;
+#include "GlibWindowEventHandler.h"
 
+class GlibWindow {
 public:
-    GlibWindow(int width, int height, char title);
-    ~GlibWindow();
+	std::shared_ptr<GLFWwindow> mGLFWWindow;
+	std::shared_ptr<GlibWindowEventHandler> mGlibWindowEventHandler;
+
+	int InitWindow(int width, int height, const char *title);
 };
 
 #endif
