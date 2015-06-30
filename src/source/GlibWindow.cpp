@@ -1,6 +1,5 @@
 #include "GlibWindow.h"
 
-#include "GLFW\glfw3.h"
 #include "GlibErrors.h"
 
 void GLFWErrorCallback(int error, const char* desc){
@@ -18,16 +17,15 @@ int GlibWindow::InitWindow(int width, int height, const char *title){
 		return GLIB_ERROR_GLFW_INIT_FAIL;
 	}
 
-	mGLFWWindow = std::make_shared<GLFWwindow>(
-		glfwCreateWindow(width, height, title, NULL, NULL));
+	mGLFWWindow = glfwCreateWindow(width, height, title, NULL, NULL);
 
 	if (!mGLFWWindow){
 		glfwTerminate();
 		return GLIB_ERROR_GLFW_WINDOW_CREATE_FAIL;
 	}
 
-	glfwMakeContextCurrent(mGLFWWindow.get());
-	glfwSetKeyCallback(mGLFWWindow.get(), KeyCallback);
+	glfwMakeContextCurrent(mGLFWWindow);
+	glfwSetKeyCallback(mGLFWWindow, KeyCallback);
 
 	/* GLEW NEEDS TO BE INCLUDED TO USE THIS
 

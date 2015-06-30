@@ -2,6 +2,9 @@
 An OpenGl library.  
 *Note: The code currently on this branch does not reflect the design below, currently refactoring*
 
+#TODO
+- Move everything to namespaces
+
 #Design Strategy
 I am determining how to break up Glib based on a recent [OpenGl endeavor](https://github.com/Noah-Huppert/HelloGl/). 
 I will be taking the parts that I think I can split up and making them into modules for Glib.
