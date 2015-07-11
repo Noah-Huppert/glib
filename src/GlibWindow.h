@@ -1,6 +1,7 @@
 #ifndef GLIB_WINDOW_H
 #define GLIB_WINDOW_H
 
+#include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #include <memory>
 #include "GlibWindowEventHandler.h"

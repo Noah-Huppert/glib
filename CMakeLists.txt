@@ -38,9 +38,14 @@ set(glew_INSTALL_DIR ${EXTERNAL_LIB_DIR}/glew)
 # -- Build
 externalProject_add(glew
     GIT_REPOSITORY https://github.com/nigels-com/glew.git
-    GIT_TAG glew-1.12.0
-    SOURCE_DIR build/cmake
-    INSTALL_DIR ${glew_INSTALL_DIR})
+
+    CONFIGURE_COMMAND make extensions
+
+    BUILD_IN_SOURCE true
+    BUILD_COMMAND make
+
+    INSTALL_DIR ${glew_INSTALL_DIR}
+    INSTALL_COMMAND sudo make install && sudo make clean)
 
 
 #Compile

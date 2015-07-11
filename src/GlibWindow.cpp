@@ -18,14 +18,12 @@ int glib::GlibWindow::InitWindow(int width, int height, const char *title){
 	glfwMakeContextCurrent(mGLFWWindow.get());
 	//glfwSetKeyCallback(mGLFWWindow.get(), KeyCallback);
 
-	/* GLEW NEEDS TO BE INCLUDED TO USE THIS
-
 	GLenum glewInitErr = glewInit();
 	if (glewInitErr != GLEW_OK){
 		fprintf(stdout, "Glew Error: %s\n", glewGetErrorString(glewInitErr));
-		return GLIB_ERROR_GLEW_INIT_FAIL;
+		return glib::error::FAIL;
 	}
-	*/
+
 
     return glib::error::OK;
 }
