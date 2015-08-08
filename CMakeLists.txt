@@ -45,7 +45,7 @@ externalProject_add(glew
     BUILD_COMMAND make
 
     INSTALL_DIR ${glew_INSTALL_DIR}
-    INSTALL_COMMAND sudo make install && sudo make clean)
+    INSTALL_COMMAND sudo make install && rsync ./lib ${glew_INSTALL_DIR} && sudo make clean)
 
 
 #Compile
@@ -57,7 +57,10 @@ include_directories(${glfw_INCLUDE_DIRS})
 include_directories(${glib_INCLUDE_DIRS})
 
 # -- Compile
-add_library(glib STATIC ${glib_SOURCE_FILES})
+add_library(glib STATIC ${glib_SOURCE_FILES} example/main.h example/main.c)
+target_link_libraries(glib
+    ${glfw_INSTALL_DIR}/lib/libglfw3.a
+    ${glew_INSTALL_DIR}/lib/libGLEW.a)
 
 #Install
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include DESTINATION include
