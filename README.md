@@ -1,3 +1,4 @@
+glib
+====
 
-#Glib
-An OpenGl library.
+OpenGL Library
