@@ -1,4 +1,0 @@
-glib
-====
-
-OpenGL Library
